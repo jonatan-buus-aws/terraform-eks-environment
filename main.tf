@@ -28,6 +28,7 @@ module "vpc" {
 	vpc_name = "${var.eks_cluster_name}-vpc"
 	vpc_tags = { "env" = "eks", "kubernetes.io/cluster/${var.eks_cluster_name}" = "shared" }
 	vpc_unsupported_ec2_availability_zones = var.ec2_unsupported_availability_zones
+	vpc_secure_default_vpc = false
 }
 
 # Create roles for the EKS Cluster separately to prevent re-creation when new roles for other infrastructure components are added to the list
