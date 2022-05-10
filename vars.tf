@@ -5,7 +5,7 @@ variable "app_name" {
 }
 variable "app_port" {
     type = number
-    default = 80
+    default = 8080
     description = "The port that the Kubernetes App listens on within the container. This is also the port that will be exposed in the provisioned load balancer"
 }
 variable "ec2_unsupported_availability_zones" {
