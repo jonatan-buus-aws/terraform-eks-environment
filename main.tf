@@ -98,7 +98,7 @@ resource "null_resource" "docker" {
 	}
 }
 module "k8s_app" {
-	depends_on = [ null_resource.docker ]
+	depends_on = [ null_resource.docker, module.eks ]
 
 	source = "github.com/jonatan-buus-aws/terraform-modules/k8s-app"
 
