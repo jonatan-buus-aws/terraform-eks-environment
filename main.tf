@@ -8,7 +8,7 @@ locals {
 					  "eks_node_group" = { name = "ec2-node-group-for-${var.eks_cluster_name}",
 					  					   policy = module.eks.eks_standard_policies.ec2_node_group,
 										   description = "Role for an EKS Cluster's node pool",
-										   policy_attachments = [ "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy", "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly" ],
+										   policy_attachments = [ "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy", "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly", "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy" ],
 										   tags = { } },
 					  "eks_fargate" = { name = "fargate-pods-for-${var.eks_cluster_name}",
 					  					policy = module.eks.eks_standard_policies.fargate,
